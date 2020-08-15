@@ -1,0 +1,32 @@
+video (2.0)
+inner joins(from a single database)
+
+select * from order_items join products on order_items.product_id = products.product_id
+
+
+video (2.1)
+joining from across databases(one database to other) 
+
+
+use sql_inventory; highliging or intializing the  database  use the USE keyword
+
+select * 
+from sql_store.order_items oi 
+join sql_inventory.products p on oi.product_id = p.product_id
+
+
+video (2.2)
+
+join the table by self joins 
+
+use sql_hr;
+select e.first_name, m.first_name from employees e join employees m on e.reports_to = m.employee_id
+
+
+video (2.3)
+joining multitable 
+
+use sql_store;
+
+select * from orders o join customers c on o.customer_id = c.customer_id 
+join order_statuses os on o.status = os.order_status_id
